@@ -82,7 +82,6 @@ Here is the example of that:
 
 In MongoDB, a cursor is an object that allows you to iterate over the result set of a query. It provides various methods to traverse, manipulate, and control the query results.
 
-
 1. count
 2. limit
 3. sort
@@ -90,17 +89,13 @@ In MongoDB, a cursor is an object that allows you to iterate over the result set
 
 For example lets fetch all the document from the DB.
 
-
 ![1719390946099](image/Readme/1719390946099.png)
 
 Now use the above methods:
 
 ![1719390966792](image/Readme/1719390966792.png)
 
-
 ![1719390975959](image/Readme/1719390975959.png)
-
-
 
 ![1719391022904](image/Readme/1719391022904.png)
 
@@ -122,3 +117,53 @@ Syntax: {operator : [{cond 1 },{cond 2} ....}]}
 4. $not -Perform a logical not operation on a specified expression , inverting the result.
 
    ![1719393312377](image/Readme/1719393312377.png)
+
+## Complex expresssion
+
+'$expr' operator allow to use aggrigation expression with in a query.
+
+The $expr operator in MongoDB allows you to use aggregation expressions within a query to compare fields from the same document. It's particularly useful when you need to perform more complex comparisons or calculations involving document fields.
+
+Syntax:
+
+```
+{$expr : {operator:[field,value]}}
+```
+
+One important thing to remember is the field should be prefix with $ sign.
+// db.sales.find({$expr: {$gt: ['$price',1340] }})
+
+So let's us take an example of a document which is given below:
+
+![1719474412123](image/Readme/1719474412123.png)
+
+Now we are using $expr operator to find the document:
+
+![1719474471694](image/Readme/1719474471694.png)
+
+here both the values are fields only for comparison thats why $ sign is used.
+
+## Element Operator
+
+In MongoDB, element operators are used to query documents based on the existence, type, and values of fields within the documents. These operators help you work with fields that are arrays, null, missing, or have specific data types.
+
+* $exists: Matches documents that have a specific field, regardless of its value.
+
+  ![1719474825906](image/Readme/1719474825906.png)
+* $type: The $type operator filters documents based on the BSON data type of a field.
+  // Basically we need to search or find the fields based on types (BSON Type) for example
+
+   ![1719475051558](image/Readme/1719475051558.png)
+
+*  $size: It matches documents where the size of the array field matches a specified value.
+// Basically we need to search or find the fields based on size of array for example.
+
+Syntax:
+
+assume that your sales collection has a field name comments and it's an array and we need to sort only those document whose length is 2.
+
+```
+db.sales.find({comments: {$size:2}})
+```
+
+## Projection in MongoDB
