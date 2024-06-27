@@ -153,10 +153,9 @@ In MongoDB, element operators are used to query documents based on the existence
 * $type: The $type operator filters documents based on the BSON data type of a field.
   // Basically we need to search or find the fields based on types (BSON Type) for example
 
-   ![1719475051558](image/Readme/1719475051558.png)
-
-*  $size: It matches documents where the size of the array field matches a specified value.
-// Basically we need to search or find the fields based on size of array for example.
+  ![1719475051558](image/Readme/1719475051558.png)
+* $size: It matches documents where the size of the array field matches a specified value.
+  // Basically we need to search or find the fields based on size of array for example.
 
 Syntax:
 
@@ -167,3 +166,26 @@ db.sales.find({comments: {$size:2}})
 ```
 
 ## Projection in MongoDB
+
+It is useful when you want to show only specific data from a document.
+
+* Including Specific Fields: To include only specific fields in the query result, you can use the projection with a value of 1 for the fields you want to include.
+* Excluding Specific Fields:To exclude specific fields from the query result, you can use the projection with a value of 0 for the fields you want to exclude.
+* We cannot include and exclude fields in the same query projection in MongoDB. It's either inclusion or exclusion, not both simultaneously.\
+
+As we take an example which is given below:
+
+![1719485544868](image/Readme/1719485544868.png)
+
+![1719485555030](image/Readme/1719485555030.png)
+
+Now you will see that we can perform exclusion and inclusion at the same time on any document .
+
+![1719485984367](image/Readme/1719485984367.png)
+
+## Embeded document (Dealing with Arrays & Object)
+
+In this we used dot notation for the query of the data and it's used to check the data of any document which is present inside nested documents.
+
+
+![1719486333976](image/Readme/1719486333976.png)
