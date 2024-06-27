@@ -187,5 +187,45 @@ Now you will see that we can perform exclusion and inclusion at the same time on
 
 In this we used dot notation for the query of the data and it's used to check the data of any document which is present inside nested documents.
 
-
 ![1719486333976](image/Readme/1719486333976.png)
+
+## $all vs $elementmatch
+
+### $all Operator
+
+ The $all operator selects documents where the value of a field is an array that contains all the specified elements.
+
+**Syntax**
+
+```
+{ field: { $all: [ value1, value2, ... ] } }
+
+```
+
+To find products that have  "electronics", "battery" and "portable" in their tags array, use the $all operator:
+
+![1719493869378](image/Readme/1719493869378.png)
+
+### $elemMatch Operator
+
+The $elemMatch operator matches documents that contain an array field with at least one element that matches all the specified query criteria.
+
+**syntax**
+
+```
+{ field: { $elemMatch: { query1, query2, ... } } }
+```
+
+**Example**
+
+Consider a collection students with the following documents:
+
+![1719494671685](image/Readme/1719494671685.png)
+
+To find students who have scored more than 80 in math, use the $elemMatch operator:
+
+
+![1719494721254](image/Readme/1719494721254.png)
+
+# Update operation in MongoDB
+
