@@ -224,8 +224,104 @@ Consider a collection students with the following documents:
 
 To find students who have scored more than 80 in math, use the $elemMatch operator:
 
-
 ![1719494721254](image/Readme/1719494721254.png)
 
 # Update operation in MongoDB
 
+**updateOne**
+The updateOne() method updates the first document that matches the filter criteria.
+
+***Example***
+
+![1719573544384](image/Readme/1719573544384.png)
+
+* update the name of the product in the products collection where the name of the product is "product B"
+
+![1719574582148](image/Readme/1719574582148.png)
+
+**updateMany**
+The updateMany() method updates all the documents that match the filter criteria.
+
+***Example***
+
+![1719574886385](image/Readme/1719574886385.png)
+
+* update the targetPrice of all the product whose price is 12 in the sales collections.
+
+![1719575028341](image/Readme/1719575028341.png)
+
+# Renaming and Removing field in a document
+
+#### Rename
+
+- The rename() method renames the name of the field in a document.
+
+***Example***
+
+![1719575241086](image/Readme/1719575241086.png)
+
+* Now we have to update the field name of the product from name to product of the sales collection.
+
+![1719575500020](image/Readme/1719575500020.png)
+
+#### Remove
+
+- The unset() function is used to remove any field from a document.
+
+***Example***
+
+![1719575241086](image/Readme/1719575241086.png)
+
+* we have to remove the field targetedPrice from  the sales collection.
+
+![1719575869461](image/Readme/1719575869461.png)
+
+# Updating arrays and Embedded Documents
+
+##### Adding a new field in a document
+
+```bash
+db.collection.updateOne({filter},{$set:{"fieldName":"value"}})
+```
+
+##### deleting a new field in a document
+
+```bash
+db.collection.updateOne({filter},{$unset:{fieldName: 1}})
+```
+
+#### Embeded Document
+
+- In this example we will know how to add a new field in a array of a document:
+
+![1719576820673](image/Readme/1719576820673.png)
+
+* Now we have to add the grade of a subject javascript of the student with the name Alice:
+
+![1719576882974](image/Readme/1719576882974.png)
+
+- In this example we will know how to add a new field in a array of a document:
+
+![1719576820673](image/Readme/1719576820673.png)
+
+* Now we have to remove the marks student with the name Alice from the grades array:
+
+![1719577468017](image/Readme/1719577468017.png)
+
+# Deletion in MongoDB
+
+#### deleteOne
+
+![1719577777448](image/Readme/1719577777448.png)
+
+- We have to delete the product whose quantity = 10 from the sales collections
+
+![1719577868717](image/Readme/1719577868717.png)
+
+#### deleteMany
+
+![1719578008980](image/Readme/1719578008980.png)
+
+- We have to delete the product where the price is 12 from the sales collections
+
+![1719578019502](image/Readme/1719578019502.png)
