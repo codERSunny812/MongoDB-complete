@@ -1,4 +1,22 @@
-![1719380029294](image/Readme/1719380029294.png)
+# MONGODB
+
+###### **It’s an open source document oriented NOSQL database management system. In which the data is stored in form of JSON.**
+
+### Diffrence between SQL and NOSQL data base
+
+#### SQL:
+
+* It's a relational database.
+* Store data in form of row and column
+* suitable for application with well defined schema
+* ex- mysql , postgresql
+
+#### NOSQL:
+
+* It's a non relational data base.
+* Store data in form of document.
+* ideal for application with dynamic or envolving data models
+* ex- mongoDB , cassendra
 
 # MongoDB community server:
 
